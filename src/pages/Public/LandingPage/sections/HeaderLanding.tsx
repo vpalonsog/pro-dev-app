@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import React from "react"
 
+import proDevLogo from '../../../../assets/logo-pro-dev.svg'
+import './App.css'
 
 import {
   NavigationMenu,
@@ -11,8 +13,11 @@ import {
   navigationMenuTriggerStyle,
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
-import { cn } from "@/lib/utils"
-import Header from "@/components/Header/Header"
+
+
+interface HeaderProps {
+  children?: React.ReactNode
+}
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -38,11 +43,19 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem"
 
 
-const Home = () => {
+const HeaderLanding: React.FC<HeaderProps> = ({children}) => {
 
 
     
-return (
+return ( 
+    <header>
+      <img 
+        src={proDevLogo} 
+        className="logo" 
+        alt="ProDev Logo" 
+        style={{ height: '60px', width: 'auto' }} 
+      />
+
 <NavigationMenu>
     <NavigationMenuList>
         <NavigationMenuItem>
@@ -71,10 +84,15 @@ return (
         </NavigationMenuItem>
   </NavigationMenuList>
 </NavigationMenu> 
+      </header>
+  
+    
+
+
 )
    
 }
 
-export default Home;
+export default HeaderLanding;
 
 
