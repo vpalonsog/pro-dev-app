@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import React from "react"
 
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +11,7 @@ import {
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
-import Header from "@/components/Header/Header"
+import proDevLogo from "@/assets/logo-pro-dev.svg"
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -43,29 +42,48 @@ const Home = () => {
 
     
 return (
-<NavigationMenu>
+<NavigationMenu viewport={false}>
     <NavigationMenuList>
+        
         <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "h-18 w-60")}>
                 <Link to="/docs">Puntuación</Link>
             </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "h-18 w-60")}>
                 <Link to="/docs">Calificación</Link>
             </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-             <NavigationMenuTrigger>Idioma</NavigationMenuTrigger>
+             <NavigationMenuTrigger className="h-18 w-60">Idioma</NavigationMenuTrigger>
              <NavigationMenuContent>
-                <ul className="w-96">
+                <ul className="w-60 p-2">
                     <ListItem  href="/docs/primitives/alert-dialog" title="ES">
                     
                     </ListItem>
                     <ListItem  href="/docs/primitives/alert-dialog" title="EN">
                      
                     </ListItem>  
+                </ul>
+              </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "h-18 w-60")}>
+                <Link to="/">
+                    <img src={proDevLogo} alt="ProDev Logo" className="h-18 w-auto" />
+                </Link>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+             <NavigationMenuTrigger className="h-18 w-60">Iniciar sesión</NavigationMenuTrigger>
+             <NavigationMenuContent>
+                <ul className="w-60 p-2">
+                    <ListItem  href="/docs/primitives/alert-dialog" title="Iniciar con Github">
+                    
+                    </ListItem>
+                    
                 </ul>
               </NavigationMenuContent>
         </NavigationMenuItem>
