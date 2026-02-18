@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './LandingPage.scss';
 import {
   
+  Footer,
   HeaderLanding,
  
 } from './sections/index';
@@ -17,9 +18,9 @@ const LandingPage = () => {
 
   return (
     <>
-      <HeaderLanding>
+      <HeaderLanding/>
         <Header />
-      </HeaderLanding>
+        <Footer />
     </>
   );
 };

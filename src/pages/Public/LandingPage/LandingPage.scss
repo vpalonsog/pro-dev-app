@@ -1,0 +1,15 @@
+
+.landing_footer {
+  background-color: var(--black);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  gap: 1rem;
+  img {
+    width: 180px;
+    background-color: var(--black) !important;
+  }
+}
